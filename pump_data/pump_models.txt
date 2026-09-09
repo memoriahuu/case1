@@ -1,0 +1,13 @@
+def pump_model_QH(Q,n):
+    QH_coeff = [-0.580818, 1.65095, -1.4245, 0.105362, 0.104778, 0.249879]
+    nref = .5
+    QH_func = np.poly1d(QH_coeff)
+    H = QH_func(Q)*(n/nref)**2
+    return H
+
+def pump_model_QP(Q,n):
+    QP_coeff = [-0.263138, 0.0574016, 0.517813, 0.0929127]
+    nref = .5
+    QP_func = np.poly1d(QP_coeff)
+    P = QP_func(Q)*(n/nref)**2
+    return P
